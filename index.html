@@ -23,12 +23,19 @@ DeckConstructor.prototype.resetDeck = function(){
 }
 //DEAL - WORKING
 DeckConstructor.prototype.dealCard = function() {
-  console.log(this.cards.shift());
+  this.cards.shift();
   return this;
 }
-
+//NEW DECK - WORKING
 var newDeck = new DeckConstructor()
-// var newDeck1 = new DeckConstructor()
 
+//NEW PLAYER - WORKING
+function PlayerConstructor(name) {
+  this.name = name;
+  this.hand = [];
+}
+
+
+var newPlayer = new PlayerConstructor('Bob');
 </script>
 </html>
