@@ -23,8 +23,9 @@ DeckConstructor.prototype.resetDeck = function(){
 }
 //DEAL - WORKING
 DeckConstructor.prototype.dealCard = function() {
-  this.cards.shift();
-  return this;
+  // this.card = this.cards.shift()
+  return this.cards.shift();
+  // return this;
 }
 //NEW DECK - WORKING
 var newDeck = new DeckConstructor()
@@ -35,7 +36,22 @@ function PlayerConstructor(name) {
   this.hand = [];
 }
 
+//DEAL CARD TO PLAYER - WORKING
+PlayerConstructor.prototype.takeCard = function(newDeck) {
+  hand.push(newDeck.dealCard());
+  return this;
+}
+//DISCARD - WORKING
+PlayerConstructor.prototype.discard = function() {
+  if (this.hand.length > 0 ) {
+    return this.hand.shift();
+  }
+  else {
+    return this.name + ' is out of cards!'
+  }
+}
+//MEET BOB - HE'S AWFUL
+var bob = new PlayerConstructor('Bob');
 
-var newPlayer = new PlayerConstructor('Bob');
 </script>
 </html>
